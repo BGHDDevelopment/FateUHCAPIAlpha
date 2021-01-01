@@ -1,13 +1,21 @@
+/*
+ * Copyright (c) 2015-2022. Stephan BH, BGHDDevelopment.
+ * Contact: ceo@bghddevelopment.com
+ * Terms: https://bghddevelopment.com/tos
+ * Discord: https://bghddevelopment.com/discord
+ */
+
 package net.fateuhc.plugin.api;
 
 import net.fateuhc.plugin.api.managers.*;
-import net.fateuhc.plugin.api.party.*;
-import net.fateuhc.plugin.api.profile.*;
-import net.fateuhc.plugin.api.states.*;
+import net.fateuhc.plugin.api.states.GameState;
+import net.fateuhc.plugin.api.states.PlayerState;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
-import java.util.UUID;
-
+/**
+ * The FateUHCAPI allows you to hook into FateUHC to either modify and grab data
+ * or to add new features and events. Questions? https://bghddevelopment.com/discord
+ */
 public class FateUHCAPI {
 
     public static FateUHCAPI INSTANCE;
@@ -30,32 +38,9 @@ public class FateUHCAPI {
     }
 
     /**
-     * The #getProfile method allows you to grab the profile of a player.
-     * You can use this to grab and modify stats, see current status, and more.
-     * If the player does not have a profile it will return null.
-     *
-     * @param uuid
-     * @return player's profile.
-     */
-    public Profile getProfile(UUID uuid) {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * The #getParty method allows you to grab the party of a player.
-     * This can be used to see whos in a party, manage members, and more.
-     * If the player does not have a party it will return null.
-     *
-     * @param uuid
-     * @return player's party.
-     */
-    public Party getParty(UUID uuid) {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
      * This #getPartyManager method allows you to grab data
      * about parties and manage them.
+     *
      * @return party manager.
      */
     public PartyManager getPartyManager() {

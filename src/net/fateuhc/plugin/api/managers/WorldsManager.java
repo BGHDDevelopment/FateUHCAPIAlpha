@@ -1,27 +1,27 @@
+/*
+ * Copyright (c) 2015-2022. Stephan BH, BGHDDevelopment.
+ * Contact: ceo@bghddevelopment.com
+ * Terms: https://bghddevelopment.com/tos
+ * Discord: https://bghddevelopment.com/discord
+ */
+
 package net.fateuhc.plugin.api.managers;
 
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 public class WorldsManager {
 
-    public void startLoading() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
+    /**
+     * @return True/False depending on status of UHC worlds
+     */
     public boolean areUHCWorldsValid() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
-    private void handleWorldsCreation() {
+    /**
+     * Starts the biomes swap if TerrainControl is not installed.
+     */
+    public void handleBiomesSwap() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
-
-    private void handleWorldsDelete() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    private void swapBiomes() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
 }
