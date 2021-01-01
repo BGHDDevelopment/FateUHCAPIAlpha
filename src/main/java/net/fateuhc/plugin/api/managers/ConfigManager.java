@@ -7,7 +7,7 @@
 
 package net.fateuhc.plugin.api.managers;
 
-import net.fateuhc.plugin.configuration.Config;
+import net.fateuhc.plugin.api.configuration.Config;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 import java.util.List;

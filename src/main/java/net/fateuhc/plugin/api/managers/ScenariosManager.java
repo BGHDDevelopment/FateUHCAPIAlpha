@@ -7,7 +7,7 @@
 
 package net.fateuhc.plugin.api.managers;
 
-import net.fateuhc.plugin.scenarios.Scenario;
+import net.fateuhc.plugin.api.scenarios.Scenario;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.IllegalPluginAccessException;
 

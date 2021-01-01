@@ -7,8 +7,8 @@
 
 package net.fateuhc.plugin.api.managers;
 
+import net.fateuhc.plugin.api.states.PlayerState;
 import net.fateuhc.plugin.player.Profile;
-import net.fateuhc.plugin.states.PlayerState;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
