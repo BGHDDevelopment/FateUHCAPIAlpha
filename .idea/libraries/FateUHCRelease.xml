@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="FateUHCRelease">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Development/FateUHCRelease.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
