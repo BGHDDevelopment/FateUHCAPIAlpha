@@ -8,8 +8,6 @@
 package net.fateuhc.plugin.api;
 
 import net.fateuhc.plugin.api.managers.*;
-import net.fateuhc.plugin.api.states.GameState;
-import net.fateuhc.plugin.api.states.PlayerState;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 /**
@@ -106,26 +104,6 @@ public class FateUHCAPI {
      * @return mongo manager.
      */
     public MongoManager getMongoManager() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * The #getGameState method can be used to get all values
-     * in the GameState enum.
-     *
-     * @return GameState values.
-     */
-    public GameState[] getGameState() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * The #getPlayerState method allows you to get all values
-     * in the PlayerState enum.
-     *
-     * @return PlayerState values.
-     */
-    public PlayerState[] getPlayerState() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 }
