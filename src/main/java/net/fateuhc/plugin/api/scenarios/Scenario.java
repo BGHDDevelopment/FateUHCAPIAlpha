@@ -105,7 +105,7 @@ public enum Scenario {
     BATS(Material.COAL_BLOCK, "Bats", "When a player kills a bat", "there's a 95% chance of dropping a Golden Apple", "and a 5% chance of killing the player."),
     REDVSBLUE(Material.WOOL, "Red VS Blue", true,"Two teams (red, blue)", "will be randomly selected on game start."),
     BENCHBLITZ(Material.WORKBENCH, "Bench Blitz", true,"At the start of the game", "players will get 1 crafting table", "they will not be able to create more."),
-    NOODLEJUMP(Material.POTION, "Noodle Boost", true, "At the start of the game", "players will receive permanent", "jump boost.");
+    NOODLEJUMP(Material.POTION, "Noodle Jump", true, "At the start of the game", "players will receive permanent", "jump boost.");
 
     /**
      * Scenario name

@@ -1,5 +1,6 @@
 net.fateuhc.plugin.api
 net.fateuhc.plugin.api.configuration
+net.fateuhc.plugin.api.events
 net.fateuhc.plugin.api.managers
 net.fateuhc.plugin.api.scenarios
 net.fateuhc.plugin.api.states

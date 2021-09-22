@@ -42,8 +42,10 @@ public enum Config {
     SPEED_POTIONS("Speed Potions", false, new ItemBuilder(Material.POTION).setDurability(8194)),
     INVIS_POTIONS("Invisibility Potions", false, new ItemBuilder(Material.POTION).setDurability(8238)),
     FLAT("Last Border Flat", true, new ItemBuilder(Material.GRASS), "Flat arena will be made on", "the last border of a game."),
+    EXACT_FLAT("Exact Flat", false, new ItemBuilder(Material.GRASS), "Flat arena will be made on", "the exact custom set border size."),
+    EXACT_FLAT_SIZE("Exact Flat Size", 25, new ItemBuilder(Material.GRASS)),
     GLASS_BORDER("Glass Bedrock", true, new ItemBuilder(Material.STAINED_GLASS).setDurability(14), "Visual glass border above", "the real bedrock border."),
-    PARTY_DAMAGE("Party Damage", true, new ItemBuilder(Material.CAULDRON_ITEM), "Prevents you from dealing", "damage to party members."),
+    PARTY_DAMAGE("Prevent Party Damage", true, new ItemBuilder(Material.CAULDRON_ITEM), "When enabled, prevents you from dealing", "damage to party members."),
     DEATH_KICK("Death Kick", true, new ItemBuilder(Material.INK_SACK).setDurability(1), "Kick you 30 seconds after", "you die in a uhc game."),
     MOBS_ATTACK("Mobs Attack", true, new ItemBuilder(Material.SKULL_ITEM).setDurability(4), "If disabled you don't need to", "care about mobs attack, be safe."),
     TO_INVENTORY("To Inventory", false, new ItemBuilder(Material.CHEST), "If enabled all mining ores", "will go to inventory automatically."),
@@ -55,9 +57,10 @@ public enum Config {
     ANTIBURN("AntiBurn", false, new ItemBuilder(Material.FIREWORK_CHARGE), "If enabled items dropped in fire", "will not burn."),
     IPVP("iPvP", true, new ItemBuilder(Material.BOW), "Prevents players from dealing", "damage to you before pvp. Also prevents", "lava, water placing and usage of", "flint and steel if someone is near you."),
     ABSORPTIONLESS("Absorption Less", true, new ItemBuilder(Material.GOLDEN_APPLE), "When players eat golden heads and", "golden apples they will not", "gain absorption effects"),
-    REDVBLUESIZE("Red VS Blue Party Size", 50, new ItemBuilder(Material.WOOL), "This value determines how many players max are on", "each team during a RedVBlue match"),
     UBL("UBL", false, new ItemBuilder(Material.DIAMOND_AXE), "If set to true UBL ban lists will be hooked", "and UBL bans will take effect"),
-    SHEEP_STRING("Sheep Drop String", false, new ItemBuilder(Material.WOOL), "If set to true sheep will", "drop 1 string when they die");
+    SHEEP_STRING("Sheep Drop String", false, new ItemBuilder(Material.WOOL), "If set to true sheep will", "drop 1 string when they die"),
+    ONEHUNDERED_BORDER_SCENARIOS("100x100 Border Scenarios", false, new ItemBuilder(Material.STAINED_CLAY), "If set to true scenarios set from the", "uhcconfiguration.yml will be enabled."),
+    RANDOM_TEAMS("Random Teams", false, new ItemBuilder(Material.CHEST), "If enabled, teams will be assigned randomly.");
 
     /**
      * Defines config default and current amount.
