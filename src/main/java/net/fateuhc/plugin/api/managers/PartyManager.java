@@ -56,6 +56,22 @@ public class PartyManager {
     }
 
     /**
+     * Used to the online members of a party.
+     *
+     * @param player The player who your wanting to get the members of.
+     * @return List of online party members.
+     */
+    public List<Player> getOnlineMembers(Player player) { throw new IllegalPluginAccessException("FateUHCAPI is not registered!"); }
+
+    /**
+     * Used to get the members of a party.
+     *
+     * @param player The player who your wanting to get the members of.
+     * @return List of the party members.
+     */
+    public List<UUID> getMembers(Player player) { throw new IllegalPluginAccessException("FateUHCAPI is not registered!"); }
+
+    /**
      * Used to get the state of a party.
      *
      * @param player Player's name
