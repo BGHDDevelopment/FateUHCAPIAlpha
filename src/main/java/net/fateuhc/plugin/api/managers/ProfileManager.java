@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2022. Stephan BH, BGHDDevelopment.
+ * Copyright (c) 2015-2024. BGHDDevelopment LLC.
  * Contact: ceo@bghddevelopment.com
  * Terms: https://bghddevelopment.com/tos
  * Discord: https://bghddevelopment.com/discord
@@ -16,15 +16,19 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+@SuppressWarnings("unused")
 public class ProfileManager {
 
     /**
      * Used to create a player's profile.
-     * This is done on the first join of the player.
+     *This is done on the first join of the player.
+     *
+     * @deprecated This will be removed in a future api version as it should be an internal method.
      *
      * @param uuid Player's UUID
      * @param name Player's name
      */
+    @Deprecated
     public void handleProfileCreation(UUID uuid, String name) {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }

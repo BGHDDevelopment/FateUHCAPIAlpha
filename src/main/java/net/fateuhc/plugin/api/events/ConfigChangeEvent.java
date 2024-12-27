@@ -7,51 +7,76 @@
 
 package net.fateuhc.plugin.api.events;
 
-import lombok.Getter;
-import lombok.Setter;
-import net.fateuhc.plugin.api.data.ScenarioData;
+import net.fateuhc.plugin.api.data.ConfigData;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.IllegalPluginAccessException;
+import org.jetbrains.annotations.NotNull;
 
-/**
- * Called in EditScenariosMenu
- *
- * Is called when a scenario is toggled on/off
- */
-@Getter
-@Setter
-public class ScenarioToggleEvent extends Event implements Cancellable {
+public class ConfigChangeEvent extends Event implements Cancellable {
 
-    private static HandlerList handlers = new HandlerList();
+    private String configName;
+    private int newAmount;
+    private boolean newActive;
+    private ConfigData configData;
     private Player player;
-    private ScenarioData scenario;
-    private boolean toEnable;
     private boolean cancelled;
+    private HandlerList handlers = new HandlerList();
 
-    /**
-     * Get the handlers list.
-     *
-     * @return {@link HandlerList}
-     */
     @Override
-    public HandlerList getHandlers() {
+    public void setCancelled(boolean b) {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Get the handlers list.
+     * Get the name of the config file.
      *
-     * @return {@link HandlerList}
+     * @return {@link String}
      */
-    public static HandlerList getHandlerList() {
+    public String getConfigName() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Check if the event has been cancelled or not.
+     * Get the new amount thats been set.
+     *
+     * @return {@link Integer}
+     */
+    public int getNewAmount() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Get the new active status.
+     *
+     * @return {@link Boolean}
+     */
+    public boolean getNewActive() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Get the data for the config option thats been changed.
+     *
+     * @return {@link ConfigData}
+     */
+    public ConfigData getConfigData() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Get the player who has changed the config option.
+     *
+     * @return {@link Player}
+     */
+    public Player getPlayer() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Is the event cancelled?
      *
      * @return {@link Boolean}
      */
@@ -60,40 +85,9 @@ public class ScenarioToggleEvent extends Event implements Cancellable {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
-    /**
-     * Change if the event is cancelled or not.
-     *
-     * @param b Should the event be cancelled?
-     */
+    @NotNull
     @Override
-    public void setCancelled(boolean b) {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the player who toggled the scenario.
-     *
-     * @return {@link Player} that toggled the scenario.
-     */
-    public Player getPlayer() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the scenario data that was triggered
-     *
-     * @return {@link ScenarioData} of the scenario.
-     */
-    public ScenarioData getScenario() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Is the scenario getting enabled?
-     *
-     * @return {@link Boolean}
-     */
-    public boolean isToEnable() {
+    public HandlerList getHandlers() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 }

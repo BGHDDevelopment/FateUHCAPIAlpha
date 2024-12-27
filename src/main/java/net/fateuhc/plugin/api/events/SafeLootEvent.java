@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2022. BGHDDevelopment LLC.
+ * Copyright (c) 2015-2024. BGHDDevelopment LLC.
  * Contact: ceo@bghddevelopment.com
  * Terms: https://bghddevelopment.com/tos
  * Discord: https://bghddevelopment.com/discord
@@ -7,12 +7,12 @@
 
 package net.fateuhc.plugin.api.events;
 
-
 import lombok.Getter;
 import lombok.Setter;
 import org.bukkit.block.Chest;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
+import org.bukkit.plugin.IllegalPluginAccessException;
 
 /**
  * Called on SafeLootListener
@@ -28,30 +28,49 @@ public class SafeLootEvent extends Event {
     private String claimerName;
     private Chest chest;
 
+    /**
+     * Get the handlers list.
+     *
+     * @return {@link HandlerList}
+     */
     @Override
     public HandlerList getHandlers() {
-        return handlers;
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
-    public SafeLootEvent(String name, String claimerName, Chest chest) {
-        this.playerName = name;
-        this.claimerName = claimerName;
-        this.chest = chest;
-    }
-
+    /**
+     * Get the handlers list.
+     *
+     * @return {@link HandlerList}
+     */
     public static HandlerList getHandlerList() {
-        return handlers;
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
+    /**
+     * Get the player's name.
+     *
+     * @return {@link String} - player's name
+     */
     public String getPlayerName() {
-        return this.playerName;
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
+    /**
+     * Get the loot claimers name.
+     *
+     * @return {@link String} - player's name
+     */
     public String getClaimerName() {
-        return this.claimerName;
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
+    /**
+     * Get the loot chest.
+     *
+     * @return {@link Chest}
+     */
     public Chest getChest() {
-        return this.chest;
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 }

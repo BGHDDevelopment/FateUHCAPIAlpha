@@ -5,13 +5,11 @@
  * Discord: https://bghddevelopment.com/discord
  */
 
-package net.fateuhc.plugin.api.states;
+package net.fateuhc.plugin.api.data;
 
-/**
- * Provides the possible GameStates
- */
-public enum GameState {
+import java.sql.ResultSet;
 
-    LOBBY, STARTING, GAME, DEATHMATCH, ENDING
+public interface SelectCall {
 
+    void call(ResultSet resultSet);
 }

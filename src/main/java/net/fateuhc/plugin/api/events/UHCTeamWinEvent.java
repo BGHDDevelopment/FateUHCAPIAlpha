@@ -7,25 +7,23 @@
 
 package net.fateuhc.plugin.api.events;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.bukkit.block.Chest;
+import net.fateuhc.plugin.player.stats.Winner;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
+import java.util.List;
+
 /**
- * Called on TimeBombListener
+ * Called when a team wins the game
  *
- * Handles player and the chest
+ * Handles win and player data
  */
-@Getter
-@Setter
-public class TimeBombEvent extends Event {
+public class UHCTeamWinEvent extends Event {
 
     private static HandlerList handlers = new HandlerList();
-    private String playerName;
-    private Chest chest;
+    private List<Winner> winners;
 
     /**
      * Get the handlers list.
@@ -47,20 +45,20 @@ public class TimeBombEvent extends Event {
     }
 
     /**
-     * Get the player name of who died.
+     * Get the winners of the UHC game.
      *
-     * @return {@link String} - player name.
+     * @return {@link List} of {@link Winner}s
      */
-    public String getPlayerName() {
+    public List<Winner> getWinners() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Get the drops chest.
+     * Get the winners of the UHC game as a player.
      *
-     * @return {@link Chest}
+     * @return {@link List} of winners as {@link Player}s.
      */
-    public Chest getChest() {
+    public List<Player> getWinnersAsPlayer() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 }

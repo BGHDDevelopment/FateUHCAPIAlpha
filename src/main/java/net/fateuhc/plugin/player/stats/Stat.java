@@ -5,20 +5,22 @@
  * Discord: https://bghddevelopment.com/discord
  */
 
-package net.fateuhc.plugin.api.managers;
+package net.fateuhc.plugin.player.stats;
 
 import org.bukkit.plugin.IllegalPluginAccessException;
 
-@SuppressWarnings("unused")
-public class BorderManager {
+public class Stat {
+
+    private int amount;
 
     /**
-     * Retrieves information about the border.
+     * Get the amount for the stat.
      *
-     * @return A string containing information about the border. Format taken from UHC-BORDER-INFO-FORMAT.
+     * @return {@link Integer}
      */
-    public String getBorderInfo() {
+    public int getAmount() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
 }
+

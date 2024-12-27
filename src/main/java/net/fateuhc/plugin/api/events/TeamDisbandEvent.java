@@ -7,60 +7,54 @@
 
 package net.fateuhc.plugin.api.events;
 
-import lombok.Getter;
-import lombok.Setter;
-import org.bukkit.block.Chest;
+import net.fateuhc.plugin.team.Team;
+import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.IllegalPluginAccessException;
+import org.jetbrains.annotations.NotNull;
 
 /**
- * Called on TimeBombListener
+ * This event is called when a team is disbanded.
  *
- * Handles player and the chest
+ * @since API v0.4-ALPHA
  */
-@Getter
-@Setter
-public class TimeBombEvent extends Event {
+public class TeamDisbandEvent extends Event {
 
-    private static HandlerList handlers = new HandlerList();
-    private String playerName;
-    private Chest chest;
+    private Team disbandedTeam;
+    private int disbandedTeamId;
+    private Player oldOwner;
+    private HandlerList handlers = new HandlerList();
 
     /**
-     * Get the handlers list.
+     * Get the disbanded team.
      *
-     * @return {@link HandlerList}
+     * @return {@link Team}
      */
+    public Team getDisbandedTeam() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Get the disbanded team's id.
+     *
+     * @return {@link Integer}
+     */
+    public int getDisbandedTeamId() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Get the owner of the disbanded team.
+     *
+     * @return {@link Player}
+     */
+    public Player getOldOwner() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
     @Override
-    public HandlerList getHandlers() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the handlers list.
-     *
-     * @return {@link HandlerList}
-     */
-    public static HandlerList getHandlerList() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the player name of who died.
-     *
-     * @return {@link String} - player name.
-     */
-    public String getPlayerName() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the drops chest.
-     *
-     * @return {@link Chest}
-     */
-    public Chest getChest() {
+    public @NotNull HandlerList getHandlers() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 }

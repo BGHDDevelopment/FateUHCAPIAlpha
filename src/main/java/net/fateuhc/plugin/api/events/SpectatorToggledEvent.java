@@ -7,52 +7,45 @@
 
 package net.fateuhc.plugin.api.events;
 
-import lombok.Getter;
-import lombok.Setter;
-import net.fateuhc.plugin.player.stats.Winner;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.IllegalPluginAccessException;
+import org.jetbrains.annotations.NotNull;
 
 /**
- * Called when a solo player wins the game
+ * This event is called when the player toggles their spectator mode.
  *
- * Handles win and player data
+ * @since API v0.4-ALPHA
  */
-@Getter
-@Setter
-public class UHCWinEvent extends Event {
+public class SpectatorToggledEvent extends Event {
 
-    private static HandlerList handlers = new HandlerList();
-    private Winner winner;
+    private Player player;
+    private boolean enabled;
+    private HandlerList handlers = new HandlerList();
 
     /**
-     * Get the handlers list.
+     * Get the player who has toggled spectator mode.
      *
-     * @return {@link HandlerList}
+     * @return {@link Player}
      */
+    public Player getPlayer() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Is spectator mode enabled?
+     *
+     * @return {@link Boolean}
+     */
+    public boolean isEnabled() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
     @Override
-    public HandlerList getHandlers() {
+    public @NotNull HandlerList getHandlers() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
-
-    /**
-     * Get the winner of the UHC Game.
-     *
-     * @return {@link Winner}
-     */
-    public Winner getWinner() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the winner of the UHC game as a player.
-     *
-     * @return {@link Player} of the game.
-     */
-    public Player getWinnerAsPlayer() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
 }
+
