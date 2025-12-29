@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2024. BGHDDevelopment LLC.
+ * Copyright (c) 2015-2025. BGHDDevelopment LLC.
  * Contact: ceo@bghddevelopment.com
  * Terms: https://bghddevelopment.com/tos
  * Discord: https://bghddevelopment.com/discord

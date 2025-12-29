@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2024. BGHDDevelopment LLC.
+ * Copyright (c) 2015-2025. BGHDDevelopment LLC.
  * Contact: ceo@bghddevelopment.com
  * Terms: https://bghddevelopment.com/tos
  * Discord: https://bghddevelopment.com/discord
@@ -128,6 +128,50 @@ public class ConfigManager {
      * @return {@link ConfigData}
      */
     public ConfigData getByAlias(String alias) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Retrieves the configuration for the given source.
+     * @deprecated Use {@link #getByConfig} instead.
+     *
+     * @param source The source configuration.
+     * @return The configuration object.
+     */
+    @Deprecated
+    public Config getConfig(Config source) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Retrieves the configuration for the given source.
+     *
+     * @param source The source configuration.
+     * @return {@link ConfigData}
+     */
+    public ConfigData getByConfig(Config source) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Retrieves the list of configurations.
+     * @deprecated Use {@link #getAllConfigs()} instead.
+     *
+     * @return The list of configurations.
+     */
+    @Deprecated
+    public List<Config> getConfigurations() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Sets the configurations for the UHC instance.
+     * @deprecated
+     *
+     * @param configurations The list of configurations to set.
+     */
+    @Deprecated
+    public void setConfigurations(List<Config> configurations) {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 

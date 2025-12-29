@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2024. BGHDDevelopment LLC.
+ * Copyright (c) 2015-2025. BGHDDevelopment LLC.
  * Contact: ceo@bghddevelopment.com
  * Terms: https://bghddevelopment.com/tos
  * Discord: https://bghddevelopment.com/discord
@@ -143,4 +143,13 @@ public class GameManager {
     public void getWinner() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
+
+    public String getStartTimerRemainingFormatted() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    public long getStartTimerRemainingMillis() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
 }

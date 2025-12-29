@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2015-2024. BGHDDevelopment LLC.
+ * Copyright (c) 2015-2025. BGHDDevelopment LLC.
  * Contact: ceo@bghddevelopment.com
  * Terms: https://bghddevelopment.com/tos
  * Discord: https://bghddevelopment.com/discord
@@ -7,7 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
-import net.fateuhc.plugin.utilties.uhc.game.Host;
+import net.fateuhc.plugin.utilities.uhc.game.Host;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.IllegalPluginAccessException;
