@@ -10,6 +10,8 @@ package net.fateuhc.plugin.api.managers;
 import net.fateuhc.plugin.api.FateUHCAPI;
 import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.api.states.GameState;
+import net.fateuhc.plugin.player.stats.Winner;
+import net.fateuhc.plugin.utilities.uhc.game.Host;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -144,14 +146,14 @@ public class GameManager {
     /**
      * Retrieves the host of the UHC game.
      */
-    public void getHost() {
+    public Host getHost() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
      * Retrieves the winner of the UHC game.
      */
-    public void getWinner() {
+    public Winner getWinner() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
