@@ -18,7 +18,7 @@ Maven:
 <dependency>
     <groupId>me.activated</groupId>
     <artifactId>FateUHC-API</artifactId>
-    <version>0.4-ALPHA</version>
+    <version>0.5-ALPHA</version>
     <scope>provided</scope> <!-- REQUIRED — never compile/shade scope -->
 </dependency>
 ```
@@ -26,7 +26,7 @@ Maven:
 Gradle:
 
 ```groovy
-compileOnly 'me.activated:FateUHC-API:0.4-ALPHA' // never implementation/shadow
+compileOnly 'me.activated:FateUHC-API:0.5-ALPHA' // never implementation/shadow
 ```
 
 Entry point:
@@ -58,6 +58,3 @@ SEVERE `[FateUHC-API]` message is logged naming the offending class (see
   so those specific members differ at runtime from what the stub advertises.
   Avoid API members with XSeries parameter/return types until this is resolved
   by the interface-based API rework.
-- Stub drift against the plugin is checked in CI
-  (`scripts/check_api_drift.py`); classes listed in
-  `scripts/api-drift-allowlist.txt` are known-drifted and pending resync.

@@ -18,7 +18,7 @@
     </parent>
 
     <artifactId>FateUHC-API</artifactId>
-    <version>0.4-ALPHA</version>
+    <version>0.5-ALPHA</version>
     <packaging>jar</packaging>
 
     <name>FateUHC-API</name>
