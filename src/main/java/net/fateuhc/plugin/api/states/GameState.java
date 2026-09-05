@@ -14,7 +14,7 @@ import net.fateuhc.plugin.api.StubGuard;
  */
 public enum GameState {
 
-    LOBBY, STARTING, GAME, DEATHMATCH, ENDING;
+    LOADING, LOBBY, STARTING, GAME, DEATHMATCH, ENDING;
 
     static {
         StubGuard.warnIfShaded("net.fateuhc.plugin.api.states.GameState");
