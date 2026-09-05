@@ -57,4 +57,13 @@ public class HostModeEnabledEvent extends Event {
     public @NotNull HandlerList getHandlers() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
+
+    /**
+     * Get the handlers list.
+     *
+     * @return {@link HandlerList}
+     */
+    public static HandlerList getHandlerList() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 }

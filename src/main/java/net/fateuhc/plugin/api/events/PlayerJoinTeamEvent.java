@@ -70,4 +70,13 @@ public class PlayerJoinTeamEvent extends Event {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
+    /**
+     * Get the handlers list.
+     *
+     * @return {@link HandlerList}
+     */
+    public static HandlerList getHandlerList() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
 }

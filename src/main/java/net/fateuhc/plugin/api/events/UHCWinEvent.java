@@ -65,4 +65,13 @@ public class UHCWinEvent extends Event {
     public Player getWinnerAsPlayer() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
+
+    /**
+     * Get the handlers list.
+     *
+     * @return {@link HandlerList}
+     */
+    public static HandlerList getHandlerList() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 }
