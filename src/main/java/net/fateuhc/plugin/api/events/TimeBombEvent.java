@@ -9,6 +9,7 @@ package net.fateuhc.plugin.api.events;
 
 import lombok.Getter;
 import lombok.Setter;
+import net.fateuhc.plugin.api.StubGuard;
 import org.bukkit.block.Chest;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
@@ -23,9 +24,18 @@ import org.bukkit.plugin.IllegalPluginAccessException;
 @Setter
 public class TimeBombEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.TimeBombEvent");
+    }
+
     private static HandlerList handlers = new HandlerList();
     private String playerName;
     private Chest chest;
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public TimeBombEvent(String name, Chest chest) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the handlers list.

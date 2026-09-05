@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.team.Team;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.event.Event;
@@ -21,10 +22,19 @@ import org.jetbrains.annotations.NotNull;
  */
 public class PlayerLeaveTeamEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.PlayerLeaveTeamEvent");
+    }
+
     private Team oldTeam;
     private int oldTeamId;
     private OfflinePlayer player;
     private HandlerList handlers = new HandlerList();
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public PlayerLeaveTeamEvent(Team oldTeam, int oldTeamId, OfflinePlayer player) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the player's old team.

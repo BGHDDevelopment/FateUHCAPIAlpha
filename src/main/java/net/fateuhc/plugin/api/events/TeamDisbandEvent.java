@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.team.Team;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -21,10 +22,19 @@ import org.jetbrains.annotations.NotNull;
  */
 public class TeamDisbandEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.TeamDisbandEvent");
+    }
+
     private Team disbandedTeam;
     private int disbandedTeamId;
     private Player oldOwner;
     private HandlerList handlers = new HandlerList();
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public TeamDisbandEvent(Team disbandedTeam, int disbandedTeamId, Player oldOwner) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the disbanded team.

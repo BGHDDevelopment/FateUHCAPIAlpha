@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.utilities.uhc.game.Host;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -21,9 +22,18 @@ import org.jetbrains.annotations.NotNull;
  */
 public class HostModeEnabledEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.HostModeEnabledEvent");
+    }
+
     private Host host;
     private Player player;
     private HandlerList handlers = new HandlerList();
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public HostModeEnabledEvent(Host host, Player player) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the host's profile.

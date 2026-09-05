@@ -8,6 +8,8 @@
 package net.fateuhc.plugin.api.managers;
 
 import com.cryptomorin.xseries.XMaterial;
+import net.fateuhc.plugin.api.FateUHCAPI;
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.api.data.ScenarioData;
 import net.fateuhc.plugin.api.scenarios.Scenario;
 import org.bukkit.Material;
@@ -20,6 +22,15 @@ import java.util.UUID;
 
 @SuppressWarnings("unused")
 public class ScenariosManager {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.managers.ScenariosManager");
+    }
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public ScenariosManager(FateUHCAPI api) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Register a scenario in FateUHC.
@@ -87,16 +98,6 @@ public class ScenariosManager {
     }
 
     /**
-     * Used to get a Scenario from a scenario name.
-     *
-     * @param name Scenario name (case sensitive)
-     * @return Scenario
-     */
-    public Scenario getByName(String name) {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
      * Get scenario by an alias
      * @param alias What is the scenario alias?
      * @return ScenarioData
@@ -136,13 +137,6 @@ public class ScenariosManager {
      * @return Scenario
      */
     public ScenarioData getByScenarioData(ScenarioData source) {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * @return Enabled Scenarios
-     */
-    public List<Scenario> getEnabledScenarios() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 

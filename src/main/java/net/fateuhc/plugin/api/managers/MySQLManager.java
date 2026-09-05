@@ -7,10 +7,21 @@
 
 package net.fateuhc.plugin.api.managers;
 
+import net.fateuhc.plugin.api.FateUHCAPI;
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.api.data.SelectCall;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 public class MySQLManager {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.managers.MySQLManager");
+    }
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public MySQLManager(FateUHCAPI api) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Execute an update to the database.

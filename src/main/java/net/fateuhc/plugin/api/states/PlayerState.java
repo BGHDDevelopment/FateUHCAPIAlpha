@@ -7,11 +7,17 @@
 
 package net.fateuhc.plugin.api.states;
 
+import net.fateuhc.plugin.api.StubGuard;
+
 /**
  * Provides the possible PlayerStates
  */
 public enum PlayerState {
 
-    LOBBY, PRACTICE, SCATTERING, SCATTERED, GAME, WINNER, SPECTATING, ALL
+    LOBBY, PRACTICE, SCATTERING, SCATTERED, GAME, WINNER, SPECTATING, ALL;
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.states.PlayerState");
+    }
 
 }

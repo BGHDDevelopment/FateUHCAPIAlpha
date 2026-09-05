@@ -7,190 +7,132 @@
 
 package net.fateuhc.plugin.player.data;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.player.stats.Stat;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
+import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 public class ProfileData {
 
-    /**
-     * Get the amount of kills.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getKills() {
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.player.data.ProfileData");
+    }
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public ProfileData(UUID uuid, String name) {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Get the amount of practice kills.
-     *
-     * @return {@link Stat}
+     * The keys of the stats tracked for a player.
      */
-    public Stat getPracticeKills() {
+    public enum StatKey {
+        KILLS("kills"),
+        PRACTICE_KILLS("practiceKills"),
+        DEATHS("deaths"),
+        PRACTICE_DEATHS("practiceDeaths"),
+        WINS("wins"),
+        GAMES_PLAYED("gamesPlayed"),
+        HIGHEST_KILL_STREAK("highestKillStreak"),
+        POINTS("points"),
+        GOLDEN_HEADS_EATEN("goldenHeadsEaten"),
+        GOLDEN_APPLES_EATEN("goldenApplesEaten"),
+        BOW_SHOTS("bowShots"),
+        DIAMONDS_MINED("diamondsMined"),
+        GOLD_MINED("goldMined"),
+        EMERALDS_MINED("emeraldsMined"),
+        IRON_MINED("ironMined"),
+        REDSTONE_MINED("redstoneMined"),
+        LAPIS_MINED("lapisMined"),
+        COAL_MINED("coalMined"),
+        QUARTZ_MINED("quartzMined"),
+        SPAWNERS_MINED("spawnersMined");
+
+        private final String key;
+
+        StatKey(String key) {
+            this.key = key;
+        }
+
+        /**
+         * Get the storage key of the stat.
+         *
+         * @return {@link String}
+         */
+        public String getKey() {
+            return key;
+        }
+    }
+
+    /**
+     * Get all tracked stats, keyed by {@link StatKey#getKey()}.
+     *
+     * @return {@link Map} of {@link String} and {@link Stat}
+     */
+    public Map<String, Stat> getStats() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Get the amount of deaths.
+     * Get a stat by its storage key.
      *
+     * @param key The storage key of the stat.
      * @return {@link Stat}
      */
-    public Stat getDeaths() {
+    public Stat getStat(String key) {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Get the amount of practice death.
+     * Get a stat by its key.
      *
+     * @param key The {@link StatKey} of the stat.
      * @return {@link Stat}
      */
-    public Stat getPracticeDeaths() {
+    public Stat getStat(StatKey key) {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Get the amount of wins.
+     * Get the player's respawn data.
      *
-     * @return {@link Stat}
+     * @return {@link List} of {@link RespawnData}
      */
-    public Stat getWins() {
+    public List<RespawnData> getRespawnData() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Get the amount of games played.
+     * Get the respawn data with the given order.
      *
-     * @return {@link Stat}
+     * @param order The order of the respawn.
+     * @return {@link RespawnData}
      */
-    public Stat getGamesPlayed() {
+    public RespawnData getRespawnDataByOrder(int order) {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Get the highest kill streak.
-     *
-     * @return {@link Stat}
+     * Reset all stats, alerts and settings to their defaults.
      */
-    public Stat getHighestKillStreak() {
+    public void resetData() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Get the amount of points.
-     *
-     * @return {@link Stat}
+     * Load the profile data from the storage backend.
      */
-    public Stat getPoints() {
+    public void load() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
     /**
-     * Get the amount of golden heads eaten.
-     *
-     * @return {@link Stat}
+     * Save the profile data to the storage backend.
      */
-    public Stat getGoldenHeadsEaten() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of golden apples eaten.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getGoldenApplesEaten() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of bow shots.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getBowShots() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of diamonds mined.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getDiamondsMined() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of gold mined.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getGoldMined() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of emeralds mined.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getEmeraldsMined() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of iron mined.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getIronMined() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of redstone mined.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getRedstoneMined() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of lapis mined.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getLapisMined() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of coal mined.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getCoalMined() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of quartz mined.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getQuartzMined() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get the amount of spawners mined.
-     *
-     * @return {@link Stat}
-     */
-    public Stat getSpawnersMined() {
+    public void save() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
@@ -217,7 +159,7 @@ public class ProfileData {
      *
      * @return {@link UUID}
      */
-    public UUID getUUID() {
+    public UUID getUuid() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 

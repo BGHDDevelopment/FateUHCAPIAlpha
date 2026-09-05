@@ -9,6 +9,7 @@ package net.fateuhc.plugin.api.events;
 
 import lombok.Getter;
 import lombok.Setter;
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.player.stats.Winner;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -24,8 +25,17 @@ import org.bukkit.plugin.IllegalPluginAccessException;
 @Setter
 public class UHCWinEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.UHCWinEvent");
+    }
+
     private static HandlerList handlers = new HandlerList();
     private Winner winner;
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public UHCWinEvent(Winner winner) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the handlers list.

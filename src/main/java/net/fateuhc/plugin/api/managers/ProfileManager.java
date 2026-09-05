@@ -7,6 +7,8 @@
 
 package net.fateuhc.plugin.api.managers;
 
+import net.fateuhc.plugin.api.FateUHCAPI;
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.api.states.PlayerState;
 import net.fateuhc.plugin.player.Profile;
 import org.bukkit.entity.Player;
@@ -18,6 +20,15 @@ import java.util.UUID;
 
 @SuppressWarnings("unused")
 public class ProfileManager {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.managers.ProfileManager");
+    }
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public ProfileManager(FateUHCAPI api) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Used to create a player's profile.

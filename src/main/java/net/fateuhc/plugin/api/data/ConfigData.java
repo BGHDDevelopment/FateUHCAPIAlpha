@@ -8,11 +8,16 @@
 package net.fateuhc.plugin.api.data;
 
 import com.cryptomorin.xseries.XMaterial;
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.api.configuration.ConfigType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 public class ConfigData {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.data.ConfigData");
+    }
 
     /**
      * Register a config option in FateUHC.

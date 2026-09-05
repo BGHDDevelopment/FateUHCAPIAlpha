@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.utilities.uhc.game.Host;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
@@ -17,8 +18,17 @@ import org.bukkit.plugin.IllegalPluginAccessException;
  */
 public class UHCStartEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.UHCStartEvent");
+    }
+
     private static HandlerList handlers = new HandlerList();
     private Host host;
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public UHCStartEvent(Host host) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the handlers list.

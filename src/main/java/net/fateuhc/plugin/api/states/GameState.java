@@ -7,11 +7,17 @@
 
 package net.fateuhc.plugin.api.states;
 
+import net.fateuhc.plugin.api.StubGuard;
+
 /**
  * Provides the possible GameStates
  */
 public enum GameState {
 
-    LOBBY, STARTING, GAME, DEATHMATCH, ENDING
+    LOBBY, STARTING, GAME, DEATHMATCH, ENDING;
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.states.GameState");
+    }
 
 }

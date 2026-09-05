@@ -7,6 +7,8 @@
 
 package net.fateuhc.plugin.api.managers;
 
+import net.fateuhc.plugin.api.FateUHCAPI;
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.api.states.GameState;
 import org.bukkit.Location;
 import org.bukkit.block.Block;
@@ -16,6 +18,15 @@ import org.bukkit.plugin.IllegalPluginAccessException;
 
 @SuppressWarnings("unused")
 public class GameManager {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.managers.GameManager");
+    }
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public GameManager(FateUHCAPI api) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Retrieves the center location of the UHC game.

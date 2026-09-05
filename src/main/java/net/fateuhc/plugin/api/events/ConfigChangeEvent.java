@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.api.data.ConfigData;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
@@ -17,6 +18,10 @@ import org.jetbrains.annotations.NotNull;
 
 public class ConfigChangeEvent extends Event implements Cancellable {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.ConfigChangeEvent");
+    }
+
     private String configName;
     private int newAmount;
     private boolean newActive;
@@ -24,6 +29,21 @@ public class ConfigChangeEvent extends Event implements Cancellable {
     private Player player;
     private boolean cancelled;
     private HandlerList handlers = new HandlerList();
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public ConfigChangeEvent(String configName, int newAmount, ConfigData configData, Player player) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public ConfigChangeEvent(String configName, boolean newActive, ConfigData configData, Player player) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public ConfigChangeEvent(String configName, int newAmount, boolean newActive, ConfigData configData, Player player) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     @Override
     public void setCancelled(boolean b) {

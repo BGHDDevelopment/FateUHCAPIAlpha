@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.player;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.api.states.PlayerState;
 import net.fateuhc.plugin.player.data.ProfileData;
 import net.fateuhc.plugin.utilities.uhc.timers.api.Cooldown;
@@ -20,6 +21,10 @@ import java.util.UUID;
  * The profile of a FateUHC player.
  */
 public class Profile {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.player.Profile");
+    }
 
     /**
      * Get the profile data.
@@ -62,7 +67,7 @@ public class Profile {
      *
      * @return {@link Cooldown}
      */
-    public Cooldown getHelpCooldown() {
+    public Cooldown getHelpopCooldown() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 

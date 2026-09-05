@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.player.stats.Winner;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -22,8 +23,17 @@ import java.util.List;
  */
 public class UHCTeamWinEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.UHCTeamWinEvent");
+    }
+
     private static HandlerList handlers = new HandlerList();
     private List<Winner> winners;
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public UHCTeamWinEvent(List<Winner> winners) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the handlers list.

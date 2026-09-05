@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
+import net.fateuhc.plugin.api.StubGuard;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.entity.PlayerDeathEvent;
@@ -19,8 +20,17 @@ import org.bukkit.plugin.IllegalPluginAccessException;
  */
 public class DeathMessageEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.DeathMessageEvent");
+    }
+
     private static HandlerList handlers = new HandlerList();
     private PlayerDeathEvent deathEvent;
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public DeathMessageEvent(PlayerDeathEvent event) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the handlers list.

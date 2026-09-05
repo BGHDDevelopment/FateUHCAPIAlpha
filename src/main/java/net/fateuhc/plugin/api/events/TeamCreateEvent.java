@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.team.Team;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -21,10 +22,19 @@ import org.jetbrains.annotations.NotNull;
  */
 public class TeamCreateEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.TeamCreateEvent");
+    }
+
     private Team team;
     private int teamId;
     private Player owner;
     private HandlerList handlers = new HandlerList();
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public TeamCreateEvent(Team team, int teamId, Player owner) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the new team.

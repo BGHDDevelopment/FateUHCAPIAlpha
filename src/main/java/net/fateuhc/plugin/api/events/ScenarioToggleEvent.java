@@ -9,6 +9,7 @@ package net.fateuhc.plugin.api.events;
 
 import lombok.Getter;
 import lombok.Setter;
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.api.data.ScenarioData;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
@@ -25,11 +26,20 @@ import org.bukkit.plugin.IllegalPluginAccessException;
 @Setter
 public class ScenarioToggleEvent extends Event implements Cancellable {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.ScenarioToggleEvent");
+    }
+
     private static HandlerList handlers = new HandlerList();
     private Player player;
     private ScenarioData scenario;
     private boolean toEnable;
     private boolean cancelled;
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public ScenarioToggleEvent(Player player, ScenarioData scenario, boolean toEnable) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the handlers list.

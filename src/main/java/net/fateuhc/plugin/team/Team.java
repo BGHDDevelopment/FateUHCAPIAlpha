@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.team;
 
+import net.fateuhc.plugin.api.StubGuard;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -20,6 +21,10 @@ import java.util.*;
  */
 public class Team {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.team.Team");
+    }
+
     private Player owner;
     private List<UUID> members = new ArrayList<>();
     private Map<UUID, Team> playerParties = new HashMap<>();
@@ -29,6 +34,11 @@ public class Team {
     private Location scatterLocation;
     private ChatColor chatColor;
     private String formatting;
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public Team(Player owner, int id) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the owner of the team.

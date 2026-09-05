@@ -8,11 +8,16 @@
 package net.fateuhc.plugin.api.data;
 
 import com.cryptomorin.xseries.XMaterial;
+import net.fateuhc.plugin.api.StubGuard;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 public class ScenarioData {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.data.ScenarioData");
+    }
 
     /**
      * Create a ScenarioData.

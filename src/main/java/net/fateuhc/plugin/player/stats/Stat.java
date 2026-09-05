@@ -7,9 +7,14 @@
 
 package net.fateuhc.plugin.player.stats;
 
+import net.fateuhc.plugin.api.StubGuard;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 public class Stat {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.player.stats.Stat");
+    }
 
     private int amount;
 

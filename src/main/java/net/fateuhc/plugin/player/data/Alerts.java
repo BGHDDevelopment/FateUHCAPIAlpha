@@ -7,9 +7,14 @@
 
 package net.fateuhc.plugin.player.data;
 
+import net.fateuhc.plugin.api.StubGuard;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 public class Alerts {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.player.data.Alerts");
+    }
 
     /**
      * Are mining alerts enabled?

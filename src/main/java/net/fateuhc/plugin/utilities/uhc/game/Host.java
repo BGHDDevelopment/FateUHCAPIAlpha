@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.utilities.uhc.game;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.player.Profile;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.IllegalPluginAccessException;
@@ -14,6 +15,10 @@ import org.bukkit.plugin.IllegalPluginAccessException;
 import java.util.UUID;
 
 public class Host {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.utilities.uhc.game.Host");
+    }
 
     private Profile profile;
     private UUID uuid;

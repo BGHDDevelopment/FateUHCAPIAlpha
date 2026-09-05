@@ -7,10 +7,21 @@
 
 package net.fateuhc.plugin.api.managers;
 
+import net.fateuhc.plugin.api.FateUHCAPI;
+import net.fateuhc.plugin.api.StubGuard;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 @SuppressWarnings("unused")
 public class WorldsManager {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.managers.WorldsManager");
+    }
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public WorldsManager(FateUHCAPI api) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Stops the loading of UHC worlds.
@@ -91,13 +102,6 @@ public class WorldsManager {
      * @return True/False depending on status of UHC worlds
      */
     public boolean areUHCWorldsValid() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Starts the biomes swap if TerrainControl is not installed.
-     */
-    public void handleBiomesSwap() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 }

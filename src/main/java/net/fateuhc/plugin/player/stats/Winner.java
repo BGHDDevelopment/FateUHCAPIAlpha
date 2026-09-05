@@ -7,11 +7,16 @@
 
 package net.fateuhc.plugin.player.stats;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.player.Profile;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 public class Winner {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.player.stats.Winner");
+    }
 
     public Winner(String name, int totalKills, Profile profile, Player player) {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");

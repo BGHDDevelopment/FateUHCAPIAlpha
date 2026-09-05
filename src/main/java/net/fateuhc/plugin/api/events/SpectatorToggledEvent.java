@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
+import net.fateuhc.plugin.api.StubGuard;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
@@ -20,9 +21,18 @@ import org.jetbrains.annotations.NotNull;
  */
 public class SpectatorToggledEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.SpectatorToggledEvent");
+    }
+
     private Player player;
     private boolean enabled;
     private HandlerList handlers = new HandlerList();
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public SpectatorToggledEvent(Player player, boolean enabled) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get the player who has toggled spectator mode.

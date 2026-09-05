@@ -7,11 +7,17 @@
 
 package net.fateuhc.plugin.api.configuration;
 
+import net.fateuhc.plugin.api.StubGuard;
+
 /**
  * ConfigType
  */
 public enum ConfigType {
 
-    BOOLEAN, INTEGER
+    BOOLEAN, INTEGER;
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.configuration.ConfigType");
+    }
 
 }

@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.api.events;
 
+import net.fateuhc.plugin.api.StubGuard;
 import net.fateuhc.plugin.utilities.uhc.game.Host;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Event;
@@ -21,9 +22,18 @@ import org.jetbrains.annotations.NotNull;
  */
 public class HostModeDisabledEvent extends Event {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.events.HostModeDisabledEvent");
+    }
+
     private Host host;
     private Player player;
     private HandlerList handlers = new HandlerList();
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public HostModeDisabledEvent(Host host, Player player) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      *  Get the host profile that has been disabled.

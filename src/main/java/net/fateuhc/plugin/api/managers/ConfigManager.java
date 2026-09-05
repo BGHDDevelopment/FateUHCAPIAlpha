@@ -8,6 +8,9 @@
 package net.fateuhc.plugin.api.managers;
 
 import com.cryptomorin.xseries.XMaterial;
+import net.fateuhc.plugin.api.FateUHCAPI;
+import net.fateuhc.plugin.api.StubGuard;
+import net.fateuhc.plugin.api.configuration.Config;
 import net.fateuhc.plugin.api.data.ConfigData;
 import org.bukkit.Material;
 import org.bukkit.plugin.IllegalPluginAccessException;
@@ -16,6 +19,15 @@ import java.util.List;
 
 @SuppressWarnings("unused")
 public class ConfigManager {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.managers.ConfigManager");
+    }
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public ConfigManager(FateUHCAPI api) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Register a configuration option within FateUHC.

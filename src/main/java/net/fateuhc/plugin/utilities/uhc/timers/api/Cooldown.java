@@ -7,6 +7,7 @@
 
 package net.fateuhc.plugin.utilities.uhc.timers.api;
 
+import net.fateuhc.plugin.api.StubGuard;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 import java.text.DecimalFormat;
@@ -16,9 +17,18 @@ import java.text.DecimalFormat;
  */
 public class Cooldown {
 
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.utilities.uhc.timers.api.Cooldown");
+    }
+
     private long start;
     private long expire;
     private static DecimalFormat SECONDS_FORMAT;
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public Cooldown(int seconds) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Get when the cooldown started.
@@ -35,15 +45,6 @@ public class Cooldown {
      * @return {@link Long}
      */
     public long getExpire() {
-        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
-    }
-
-    /**
-     * Get how many seconds are left.
-     *
-     * @return {@link DecimalFormat}
-     */
-    public DecimalFormat getSecondsFormat() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 
@@ -89,6 +90,22 @@ public class Cooldown {
      * @return {@link String}
      */
     public String getMiliSecondsLeft() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Get the formatted time that is left.
+     *
+     * @return {@link String}
+     */
+    public String getTimeLeft() {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
+
+    /**
+     * Cancel the cooldown countdown.
+     */
+    public void cancelCountdown() {
         throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
     }
 

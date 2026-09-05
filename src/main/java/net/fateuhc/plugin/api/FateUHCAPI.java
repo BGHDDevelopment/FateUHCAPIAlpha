@@ -13,9 +13,20 @@ import org.bukkit.plugin.IllegalPluginAccessException;
 /**
  * The FateUHCAPI allows you to hook into FateUHC to either modify and grab data
  * or to add new features and events. Questions? https://bghddevelopment.com/discord
+ *
+ * <p><strong>Dependency scope:</strong> this artifact is a compile-time stub jar.
+ * Depend on it with {@code provided} (Maven) / {@code compileOnly} (Gradle) scope
+ * and <strong>never shade it</strong> into your plugin jar — its classes share
+ * fully-qualified names with the real FateUHC plugin classes, and a shaded copy
+ * shadows them, breaking your integration with
+ * {@link IllegalPluginAccessException}. See the module README for details.</p>
  */
 @SuppressWarnings("unused")
 public class FateUHCAPI {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.FateUHCAPI");
+    }
 
     public static FateUHCAPI INSTANCE;
 

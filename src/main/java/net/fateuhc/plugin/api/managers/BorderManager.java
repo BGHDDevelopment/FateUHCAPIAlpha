@@ -7,10 +7,21 @@
 
 package net.fateuhc.plugin.api.managers;
 
+import net.fateuhc.plugin.api.FateUHCAPI;
+import net.fateuhc.plugin.api.StubGuard;
 import org.bukkit.plugin.IllegalPluginAccessException;
 
 @SuppressWarnings("unused")
 public class BorderManager {
+
+    static {
+        StubGuard.warnIfShaded("net.fateuhc.plugin.api.managers.BorderManager");
+    }
+
+    /** Internal — constructed by the FateUHC plugin. */
+    public BorderManager(FateUHCAPI api) {
+        throw new IllegalPluginAccessException("FateUHCAPI is not registered!");
+    }
 
     /**
      * Retrieves information about the border.
